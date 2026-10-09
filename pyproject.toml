@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "icats"
+version = "0.1.0"
+description = "JAX implementation of iCATS interaction-aware clustering, SNR top-p, and tail merging"
+requires-python = ">=3.10"
+dependencies = [
+    "jax>=0.4.30",
+    "numpy",
+    "pytest",
+]
+
+[project.scripts]
+icats-demo = "icats.demo:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+pythonpath = ["src"]
